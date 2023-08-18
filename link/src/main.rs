@@ -15,8 +15,8 @@ fn main() -> Result<()> {
     wasmtime_wasi::add_to_linker(&mut linker, |s| s)?;
 
     // Load and compile our two modules
-    let linking1 = Module::from_file(&engine, "examples/linking1.wat")?;
-    let linking2 = Module::from_file(&engine, "examples/linking2.wat")?;
+    let linking1 = Module::from_file(&engine, "./src/linking1.wat")?;
+    let linking2 = Module::from_file(&engine, "./src/linking2.wat")?;
 
     // Configure WASI and insert it into a `Store`
     let wasi = WasiCtxBuilder::new()
